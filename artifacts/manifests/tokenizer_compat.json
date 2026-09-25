@@ -1,0 +1,14 @@
+{
+  "equal": false,
+  "graftable": true,
+  "vocab_size_a": 248077,
+  "vocab_size_b": 248066,
+  "n_id_mismatches": 11,
+  "n_snippet_mismatches": 0,
+  "n_snippets": 10000,
+  "notes": [
+    "vocab sizes differ: 248077 vs 248066",
+    "tokens only in A (11): ['</think>', '</tool_response>', '<think>', '<tool_response>', '<tts_pad>', '<tts_text_bos>', '<tts_text_bos_single>', '<tts_text_eod>', '<|audio_end|>', '<|audio_pad|>', '<|audio_start|>']",
+    "graftable=True extra_a=11 extra_b=0"
+  ]
+}

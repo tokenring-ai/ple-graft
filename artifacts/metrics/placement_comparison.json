@@ -1,0 +1,29 @@
+{
+  "decision_val": "full FineWeb 7812 windows, not 32-window train echo",
+  "B0": 2.3086,
+  "layer1_r256_s1_frozen_gate": {"nll": 2.2974, "delta_B0": -0.0111, "array": "P1_real_s1.npy"},
+  "layer1_r256_s1_trained_gate": {"nll": 2.2961, "delta_B0": -0.0125, "array": "P1_r256_s1_gate.npy", "note": "different recipe (gate trained); not the placement control"},
+  "layer0_r256_s0": {
+    "nll": 2.3000,
+    "first32": 2.2782,
+    "train32_best": 2.2785,
+    "delta_B0": -0.0086,
+    "delta_vs_s1": 0.0025,
+    "ci_vs_s1": [0.0021, 0.0030],
+    "wins_vs_s1": false
+  },
+  "layer3_r256_s0": {
+    "nll": 2.2965,
+    "first32": 2.2797,
+    "train32_best": 2.2796,
+    "delta_B0": -0.0121,
+    "delta_vs_s1": -0.00094,
+    "ci_vs_s1": [-0.00124, -0.00065],
+    "wins_vs_s1": true,
+    "delta_vs_s1_gate": 0.00041,
+    "ci_vs_s1_gate": [0.00012, 0.00070]
+  },
+  "current_best_path": "layer-3 r=256 real PLE, frozen-open gate 0.5, 8M FineWeb (adapter_real_bottleneck_r256_s0_L3)",
+  "rule": "A placement run wins only if full-val Δ vs P1_real_s1.npy has 95% CI entirely below 0. Layer 3 meets that. Layer 0 does not. LoRA-with-control was not run because a placement run won.",
+  "lora": "skipped"
+}

@@ -1,0 +1,13 @@
+{
+  "repo": "Qwen/Qwen3.6-35B-A3B",
+  "path": "/opt/llm/Qwen3.6-35B-A3B",
+  "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+  "hidden_size": 2048,
+  "layers": 40,
+  "vocab": 248320,
+  "instruct_not_base": true,
+  "tokenizer_compat": "artifacts/manifests/tokenizer_compat_35b_a3b.json",
+  "tokenizer": "GO-WITH-NOTE extra 7 donor-only tts/audio specials; 10k snippets match; reuse val.bin",
+  "four_b_delta_nll_s1": -0.0111,
+  "win_if_ci_entirely_below": -0.025
+}

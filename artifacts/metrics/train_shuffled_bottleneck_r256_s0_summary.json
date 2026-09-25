@@ -1,0 +1,44 @@
+{
+  "arch": "bottleneck",
+  "best_val_nll": 2.4134412482380867,
+  "ckpt": "/home/mdierolf/gitprojects/ple-graft/artifacts/checkpoints/adapter_shuffled_bottleneck_r256_s0/adapter.pt",
+  "first_eval": {
+    "nll": 2.1233352087438107,
+    "ppl": 8.358969958031937,
+    "seen_tokens": 0,
+    "step": 0,
+    "tag": "before_train",
+    "tokens": 32736,
+    "windows": 32
+  },
+  "last_eval": {
+    "nll": 2.4134412482380867,
+    "ppl": 11.17234187016402,
+    "seen_tokens": 8000512,
+    "step": 7813,
+    "tag": "seen_8000512",
+    "tokens": 32736,
+    "windows": 32
+  },
+  "layer": 1,
+  "log": "/home/mdierolf/gitprojects/ple-graft/artifacts/metrics/train_shuffled_bottleneck_r256_s0.jsonl",
+  "lora_layers": 8,
+  "lora_r": 0,
+  "n_trainable": 1184256,
+  "no_ple": false,
+  "ple_mode": "shuffled",
+  "rank": 256,
+  "run_tag": "shuffled_bottleneck_r256_s0",
+  "sanity": false,
+  "seconds": 6984.224389791489,
+  "seed": 0,
+  "seen_tokens": 8000512,
+  "step0_max_abs_logit_diff": 0.0,
+  "steps": 7813,
+  "trainable": [
+    "ple_adapter.ple_norm_weight",
+    "ple_adapter.hidden_norm_weight",
+    "ple_adapter.w_down.weight",
+    "ple_adapter.w_up.weight"
+  ]
+}

@@ -1,0 +1,11 @@
+run: P2
+backbone: Qwen/Qwen3.5-4B-Base
+backbone_path: /mnt/llm-cache/models/Qwen3.5-4B-Base
+ple: real
+adapter:
+  rank: 256
+lora:
+  enabled: true
+  first_n_layers: 8
+  r: 16
+  without_ple_control: true

@@ -1,0 +1,17 @@
+backbone: Qwen/Qwen3.5-4B-Base
+backbone_path: /mnt/llm-cache/models/Qwen3.5-4B-Base
+ple: real
+gate:
+  frozen: true
+  bias: 0.0
+train_tokens: 8000000
+eval_every_tokens: 2000000
+seq_len: 1024
+batch_size: 2
+lr: 0.001
+seed: 0
+variants:
+  - {arch: bottleneck, rank: 256, note: reference}
+  - {arch: bottleneck, rank: 512}
+  - {arch: bottleneck, rank: 1024}
+  - {arch: dense, rank: 2560}

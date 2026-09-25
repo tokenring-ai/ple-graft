@@ -1,0 +1,37 @@
+{
+  "best_val_nll": 2.2824389189481735,
+  "ckpt": "/home/mdierolf/gitprojects/ple-graft/artifacts/checkpoints/adapter_real_s1/adapter.pt",
+  "first_eval": {
+    "nll": 2.2954565286636353,
+    "ppl": 9.928967836170413,
+    "seen_tokens": 0,
+    "step": 0,
+    "tag": "before_train",
+    "tokens": 32736,
+    "windows": 32
+  },
+  "last_eval": {
+    "nll": 2.2840910889208317,
+    "ppl": 9.816759606313328,
+    "seen_tokens": 8001536,
+    "step": 3907,
+    "tag": "seen_8001536",
+    "tokens": 32736,
+    "windows": 32
+  },
+  "log": "/home/mdierolf/gitprojects/ple-graft/artifacts/metrics/train_real_s1.jsonl",
+  "n_trainable": 1315840,
+  "ple_mode": "real",
+  "sanity": false,
+  "seconds": 2077.7737395763397,
+  "seed": 1,
+  "seen_tokens": 8001536,
+  "step0_max_abs_logit_diff": 0.0,
+  "steps": 3907,
+  "trainable": [
+    "adapter.ple_norm_weight",
+    "adapter.hidden_norm_weight",
+    "adapter.w_down.weight",
+    "adapter.w_up.weight"
+  ]
+}

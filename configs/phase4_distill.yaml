@@ -1,0 +1,9 @@
+run: distill
+backbone: Qwen/Qwen3.5-4B-Base
+teacher_artifact: /opt/llm/qwen3_8_flash_next_125b_a6b_nvfp4.ninfer
+ple: real
+kd_temperature: 2.0
+lambda_ce: 1.0
+lambda_kd: 1.0
+lambda_hidden: 0.0
+note: Collect teacher logits offline. Do not load the 126G teacher and 48G PLE fully into 125G RAM.

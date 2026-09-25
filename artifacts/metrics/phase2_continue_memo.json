@@ -1,0 +1,14 @@
+{
+  "verdict": "continue",
+  "not_a_dead_end": true,
+  "reason": "Real donor addresses are clearly better than shuffled addresses on the same 32 val windows. Shuffled PLE raised val NLL; real PLE slightly lowered it.",
+  "before_train_val_nll": 2.2955,
+  "baseline_delta": 0.0,
+  "real_ple_best": {"tokens": 6000640, "val_nll": 2.2797, "delta": -0.0158},
+  "shuffled_ple_best": {"tokens": 8001536, "val_nll": 2.4360, "delta": 0.1405},
+  "shuffled_minus_real": 0.1563,
+  "clearly_better_threshold": 0.05,
+  "did_not_start": ["LoRA", "distillation", "unfreeze backbone", "remaining 42M real-PLE tokens"],
+  "next_spec_gate": "C1 random frozen rows, 8M tokens, same frozen-open-gate recipe",
+  "note": "Real vs baseline is only -0.016 and flattened, so more real-PLE tokens are not justified. The shuffled control is the causal test and it failed badly, so addresses carry usable structure. Random rows are the remaining 2B control before claiming portability."
+}

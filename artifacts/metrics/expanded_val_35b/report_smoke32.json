@@ -1,0 +1,9 @@
+{
+  "B0_nll": 2.1232723742723465,
+  "B0_ppl": 8.358444743073614,
+  "four_b_B0_32": 2.2951,
+  "note": "32-window smoke on Qwen3.6-35B-A3B instruct; same val.bin as 4B",
+  "step0": "artifacts/metrics/phase1_disabled_35b.json",
+  "tokenizer": "GO-WITH-NOTE",
+  "windows": 32
+}

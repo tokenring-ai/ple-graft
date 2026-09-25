@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.hf-cache/
+.python-version
+
+# Trained weights and step logs. JSON summaries, val NLL arrays, and memos stay in git.
+artifacts/checkpoints/
+artifacts/data/
+artifacts/metrics/**/*.jsonl
+artifacts/metrics/**/*.log
+artifacts/metrics/ple_where/tokens/

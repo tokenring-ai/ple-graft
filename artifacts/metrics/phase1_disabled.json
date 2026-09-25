@@ -1,0 +1,52 @@
+{
+  "device": "cuda:0",
+  "disabled_max_abs_logit_diff": 0.0,
+  "layer_index": 1,
+  "layer_type": "linear_attention",
+  "n_sequences": 4,
+  "row_ids_match": true,
+  "sequences": [
+    {
+      "bytes_read": 10240,
+      "gather_ms": 0.20824800003538257,
+      "hash_ms": 0.12902500020572916,
+      "max_abs_logit_diff": 0.0,
+      "row_ids_match": true,
+      "text": "Hello, world.",
+      "tokens": 4,
+      "unique_rows": 64
+    },
+    {
+      "bytes_read": 33280,
+      "gather_ms": 0.27347400009603007,
+      "hash_ms": 0.1038360001075489,
+      "max_abs_logit_diff": 0.0,
+      "row_ids_match": true,
+      "text": "def add(a, b):\n    return a + b\n",
+      "tokens": 13,
+      "unique_rows": 208
+    },
+    {
+      "bytes_read": 30720,
+      "gather_ms": 0.2504269996279618,
+      "hash_ms": 0.10282099992764415,
+      "max_abs_logit_diff": 0.0,
+      "row_ids_match": true,
+      "text": "The n-gram embedding is addressed from raw token ids.",
+      "tokens": 12,
+      "unique_rows": 192
+    },
+    {
+      "bytes_read": 43520,
+      "gather_ms": 0.3414730003896693,
+      "hash_ms": 0.1166339998235344,
+      "max_abs_logit_diff": 0.0,
+      "row_ids_match": true,
+      "text": "Qwen3.5-4B hidden size is 2560.",
+      "tokens": 17,
+      "unique_rows": 272
+    }
+  ],
+  "torch": "2.14.0+cu130",
+  "zero_init_enabled_max_abs_logit_diff": 0.0
+}

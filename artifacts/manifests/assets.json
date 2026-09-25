@@ -1,0 +1,41 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.12.101+deb13-amd64-x86_64-with-glibc2.41",
+  "numpy": "2.5.3",
+  "safetensors": "0.8.0",
+  "tokenizers": "0.23.2",
+  "torch": "2.14.0+cu130",
+  "transformers": "5.17.0",
+  "cuda": "13.0",
+  "ple_manifest": "artifacts/manifests/ple.json",
+  "seeds": [
+    0,
+    1
+  ],
+  "device": "cuda:0",
+  "recipient_path": "/mnt/llm-cache/models/Qwen3.5-4B-Base",
+  "recipient_repo": "Qwen/Qwen3.5-4B-Base",
+  "donor_ple_bin": "/opt/llm/tr-infer/flashnext-nvfp4/ple.bin",
+  "donor_hf": "/opt/llm/Qwen3.8-Flash-Next-NVFP4",
+  "gpu0": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+  "gdn_kernels": "reference (causal_conv1d and flash-linear-attention not installed)",
+  "tokenizer_compat": "artifacts/manifests/tokenizer_compat.json",
+  "baseline_metrics": "artifacts/metrics/baseline.json",
+  "golden_rows": "artifacts/golden/hash_rows.json",
+  "phase0": {
+    "hash": "GO",
+    "ple_rows": "GO",
+    "tokenizer": "GO-WITH-NOTE: 11 donor-only specials (think/tool/tts/audio); shared IDs and 10k snippet encodings match",
+    "baseline_smoke_nll": 1.8532092906534672,
+    "baseline_smoke_ppl": 6.38026281864653,
+    "baseline_smoke_tokens": 32752
+  },
+  "phase1": {
+    "eval": "artifacts/metrics/phase1_disabled.json",
+    "insertion": "0-based layer 1 GDN mixer residual, before FFN",
+    "disabled_max_abs_logit_diff": 0.0,
+    "zero_init_enabled_max_abs_logit_diff": 0.0,
+    "row_ids_match": true,
+    "status": "GO"
+  }
+}

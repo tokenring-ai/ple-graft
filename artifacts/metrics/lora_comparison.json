@@ -1,0 +1,28 @@
+{
+  "decision_val": "full FineWeb 7812 windows",
+  "B0": 2.3086,
+  "PLE_only_L3": {"nll": 2.2965, "delta_B0": -0.0121, "array": "P1_L3_s0.npy"},
+  "LoRA_only": {
+    "nll": 2.2905,
+    "first32": 2.2732,
+    "train32_best": 2.2732,
+    "delta_B0": -0.0181,
+    "ci_vs_B0": [-0.01844, -0.01774],
+    "delta_vs_L3": -0.0060,
+    "ci_vs_L3": [-0.00625, -0.00576],
+    "ckpt": "adapter_lora_r16_n8_s0"
+  },
+  "PLE_plus_LoRA": {
+    "nll": 2.2922,
+    "first32": 2.2741,
+    "train32_best": 2.2741,
+    "delta_B0": -0.0164,
+    "delta_vs_LoRA_only": 0.00165,
+    "ci_vs_LoRA_only": [0.00149, 0.00182],
+    "beats_LoRA_only": false,
+    "ckpt": "adapter_real_bottleneck_r256_s0_L3_lora_r16"
+  },
+  "rule": "PLE is a successful extra ingredient only if PLE+LoRA beats LoRA-only with 95% CI entirely below 0.",
+  "verdict": "NO-GO. LoRA-only (r=16 on first 8 layers, 8M tokens) is better than PLE+LoRA. The 4B can match and exceed the frozen-PLE ΔNLL without the table. Stop the product path; keep PLE as a research result (real addresses still beat shuffled/random when the backbone is frozen).",
+  "current_best_path": "LoRA-only r=16 on first 8 decoder layers of Qwen3.5-4B-Base (no PLE)"
+}

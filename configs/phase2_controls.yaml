@@ -1,0 +1,13 @@
+backbone: Qwen/Qwen3.5-4B-Base
+backbone_path: /mnt/llm-cache/models/Qwen3.5-4B-Base
+adapter:
+  rank: 256
+  gate_bias: -3.0
+lora: false
+seeds: [0, 1]
+runs:
+  - {id: B0, ple: none}
+  - {id: C0, ple: zero}
+  - {id: C1, ple: random}
+  - {id: C2, ple: shuffled}
+  - {id: P1, ple: real}

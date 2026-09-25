@@ -1,0 +1,13 @@
+ple-graft
+Copyright 2026 Mark Dierolf
+
+This repository does not redistribute Qwen model weights, the Flash-Next PLE
+table (`ple.bin`, ~48 GiB), or any combined recipient+PLE checkpoint.
+
+Third-party software and data used by the experiment (not included here):
+
+- Qwen3.5-4B-Base, Qwen3.6-35B-A3B, and Qwen3.8-Flash-Next are Apache-2.0
+  models from Alibaba Cloud / Qwen. Download them from Hugging Face.
+- FineWeb-Edu is used as the language-modeling train/val stream.
+- The packed PLE table is a local Flash-Next pack artifact. Point
+  `PLE_GRAFT_PACK_DIR` at a copy; do not vendor it into this tree.

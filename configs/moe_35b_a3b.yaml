@@ -1,0 +1,20 @@
+# Pre-registered 35B-A3B follow-up (write this before P1 train)
+recipient: Qwen/Qwen3.6-35B-A3B
+recipient_path: /opt/llm/Qwen3.6-35B-A3B
+hidden_size: 2048
+ple_dim: 2560
+instruct_not_base: true
+skip_vision: true
+batch_size: 1
+seq_len: 1024
+layer: 1
+arch: bottleneck
+rank: 256
+gate: frozen 0.5
+train_tokens: 8000000
+reuse_val_bin: true  # tokenizer graftable vs 4B/Flash-Next
+four_b_delta_nll: -0.0111
+win_if_ci_entirely_below: -0.025
+lora_r: 16
+lora_layers: 8
+do_not_train_experts: true

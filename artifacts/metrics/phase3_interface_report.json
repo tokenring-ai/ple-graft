@@ -1,0 +1,70 @@
+{
+  "question": "Is the ~0.010 real-PLE gain limited by the 256-d bottleneck?",
+  "eval": "full frozen val, 7812 windows, 8M tokens",
+  "B0": 2.3086,
+  "variants": {
+    "bottleneck_r256_s0": {
+      "nll": 2.2989,
+      "delta_B0": -0.0097,
+      "delta_r256": 0.0,
+      "trainable": 1315840
+    },
+    "bottleneck_r256_s1": {
+      "nll": 2.2974,
+      "delta_B0": -0.0111,
+      "trainable": 1315840
+    },
+    "bottleneck_r512_s0": {
+      "nll": 2.2997,
+      "delta_B0": -0.0088,
+      "delta_r256_s0": 0.0008,
+      "ci_vs_r256": [
+        0.0005,
+        0.0012
+      ],
+      "trainable": 2626560
+    },
+    "bottleneck_r1024_s0": {
+      "nll": 2.3026,
+      "delta_B0": -0.006,
+      "delta_r256_s0": 0.0037,
+      "ci_vs_r256": [
+        0.0033,
+        0.0041
+      ],
+      "trainable": 5248000
+    },
+    "dense_2560x2560_s0_lr1e-4": {
+      "nll": 2.5765,
+      "delta_B0": 0.2679,
+      "note": "lr 1e-3 diverged to val NLL 5.5; lr 1e-4 still worse than baseline",
+      "trainable": 6558720
+    },
+    "per_head_s0_lr1e-4": {
+      "nll_32win": 2.4224,
+      "note": "16x Linear(160,160)+zero mix; lr 1e-3 val 3.07 at 2M; lr 1e-4 best 2.42 and worsening. Does not beat r=256.",
+      "trainable": 6968320
+    }
+  },
+  "verdict": "The 256-d bottleneck is not the limit. Wider bottlenecks are equal or slightly worse (CIs vs r=256 entirely above 0). Full linear and per-head mix from zero do not extract more PLE information; they train poorly. Ties go to r=256.",
+  "stage3_gate_full_val": {
+    "nll": 2.2961,
+    "delta_B0": -0.0125,
+    "delta_vs_frozen_s1": -0.00135,
+    "ci_vs_s1": [-0.00142, -0.00128],
+    "frac_windows_better_than_s1": 0.692
+  },
+  "next": "Gate on a useful adapter does not collapse (mean ~0.27-0.58) and adds a small, significant ΔNLL −0.001 vs frozen s1. Skip LoRA/unfreeze. Optional later: correlate per-token gates with n-gram rarity and baseline error.",
+  "stage3_gate_on_frozen_s1": {
+    "init_ckpt": "adapter_real_s1",
+    "trainable": 2561,
+    "tokens": 4001792,
+    "before_val_32": 2.2824,
+    "after_val_32": 2.2785,
+    "gate_mean_range": [
+      0.269,
+      0.583
+    ],
+    "note": "Gate did not collapse. Stayed in ~0.27-0.58. Tiny 32-window val improvement. Maps frozen."
+  }
+}

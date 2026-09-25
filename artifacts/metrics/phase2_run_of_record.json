@@ -1,0 +1,35 @@
+{
+  "shared_before_train_val_nll": 2.2955,
+  "eval_windows": 32,
+  "seq_len": 1024,
+  "tokens_per_eval_window_set": 32736,
+  "gate": "frozen open at 0.5",
+  "backbone": "frozen Qwen3.5-4B-Base",
+  "B0_baseline": {"val_nll": 2.2955, "delta": 0.0},
+  "P1_real_s0_best": {"tokens": 6000640, "val_nll": 2.2797, "delta": -0.0158, "evals_nll": [2.2955, 2.2822, 2.2801, 2.2797, 2.2856]},
+  "P1_real_s1_best": {"tokens": 2000896, "val_nll": 2.2824, "delta": -0.0131, "evals_nll": [2.2955, 2.2824, 2.2829, 2.2833, 2.2841]},
+  "C1_random_s0_best": {"tokens": 8001536, "val_nll": 2.3194, "delta": 0.0239, "evals_nll": [2.2955, 2.4526, 2.3568, 2.3321, 2.3194]},
+  "C2_shuffled_s0_best": {"tokens": 8001536, "val_nll": 2.4360, "delta": 0.1405, "evals_nll": [2.2955, 2.5112, 2.4720, 2.4551, 2.4360]},
+  "gaps_seed0": {
+    "random_minus_real": 0.0397,
+    "shuffled_minus_real": 0.1563
+  },
+  "two_seeds_real_delta": [-0.0158, -0.0131],
+  "phase2_success": {
+    "repeatable_val_nll_gain": true,
+    "P1_gt_C2": true,
+    "P1_gt_C1": true,
+    "P1_gt_B0": true
+  },
+  "stop": "Do not start LoRA, distillation, or unfreeze the 4B. Absolute ΔNLL vs baseline is small and flattened; causal controls already show real > random > shuffled.",
+  "expanded_val": {
+    "windows": 7812,
+    "tokens": 8000000,
+    "report": "artifacts/metrics/expanded_val/report.json",
+    "B0": 2.3086,
+    "P1_real_s0": {"nll": 2.2989, "delta": -0.0097, "ci95": [-0.0100, -0.0093]},
+    "P1_real_s1": {"nll": 2.2974, "delta": -0.0111, "ci95": [-0.0115, -0.0108]},
+    "C1_random_s0": {"nll": 2.6823, "delta": 0.3737},
+    "C2_shuffled_s0": {"nll": 2.4567, "delta": 0.1481}
+  }
+}

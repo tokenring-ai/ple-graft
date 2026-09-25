@@ -1,0 +1,15 @@
+{
+  "run": "P1-open-gate-freeze",
+  "status": "stopped_for_controls",
+  "reason": "val NLL flattened then worsened; do not spend remaining 42M tokens",
+  "before_train_val_nll": 2.2955,
+  "evals": [
+    {"tokens": 2000896, "val_nll": 2.2822},
+    {"tokens": 4001792, "val_nll": 2.2801},
+    {"tokens": 6000640, "val_nll": 2.2797},
+    {"tokens": 8001536, "val_nll": 2.2856}
+  ],
+  "best_checkpoint": {"tokens": 6000640, "val_nll": 2.2797, "delta": -0.0158},
+  "gate": "frozen at 0.5",
+  "next": "shuffled PLE control at 8M tokens, same hparams"
+}

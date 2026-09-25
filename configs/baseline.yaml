@@ -1,0 +1,10 @@
+run: B0
+backbone: Qwen/Qwen3.5-4B-Base
+backbone_path: /mnt/llm-cache/models/Qwen3.5-4B-Base
+ple: none
+adapter: none
+lora: false
+seed: 0
+max_length: 2048
+device: cuda:0
+eval_corpus: ninfer-ppl-1m

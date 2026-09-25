@@ -1,0 +1,14 @@
+run: P1
+backbone: Qwen/Qwen3.5-4B-Base
+backbone_path: /mnt/llm-cache/models/Qwen3.5-4B-Base
+ple: real
+adapter:
+  rank: 256
+  gate_bias: -3.0
+  enabled: true
+lora: false
+seed: 0
+max_length: 2048
+device: cuda:0
+train_tokens: 100000000
+eval_every_tokens: 5000000

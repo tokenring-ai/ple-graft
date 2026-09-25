@@ -1,0 +1,40 @@
+{
+  "arch": "bottleneck",
+  "best_val_nll": 2.281037926673889,
+  "ckpt": "/home/mdierolf/gitprojects/ple-graft/artifacts/checkpoints/adapter_real_bottleneck_r512_s0/adapter.pt",
+  "first_eval": {
+    "nll": 2.2954565286636353,
+    "ppl": 9.928967836170413,
+    "seen_tokens": 0,
+    "step": 0,
+    "tag": "before_train",
+    "tokens": 32736,
+    "windows": 32
+  },
+  "last_eval": {
+    "nll": 2.285640385001898,
+    "ppl": 9.831980461261043,
+    "seen_tokens": 8001536,
+    "step": 3907,
+    "tag": "seen_8001536",
+    "tokens": 32736,
+    "windows": 32
+  },
+  "log": "/home/mdierolf/gitprojects/ple-graft/artifacts/metrics/train_real_bottleneck_r512_s0.jsonl",
+  "n_trainable": 2626560,
+  "ple_mode": "real",
+  "rank": 512,
+  "run_tag": "real_bottleneck_r512_s0",
+  "sanity": false,
+  "seconds": 2070.270382642746,
+  "seed": 0,
+  "seen_tokens": 8001536,
+  "step0_max_abs_logit_diff": 0.0,
+  "steps": 3907,
+  "trainable": [
+    "adapter.ple_norm_weight",
+    "adapter.hidden_norm_weight",
+    "adapter.w_down.weight",
+    "adapter.w_up.weight"
+  ]
+}
